@@ -11,7 +11,7 @@ impl Expression {
     pub(crate) fn eval(&mut self) -> i64 {
         match self {
             Expression::Number(n) => *n,
-            Expression::Unary(_negative, expr) => -1 + expr.eval(),
+            Expression::Unary(_negative, expr) => -1 * expr.eval(),
             Expression::Binary(Operator::Add, expr1, expr2) => expr1.eval() + expr2.eval(),
             Expression::Binary(Operator::Subtract, expr1, expr2) => expr1.eval() - expr2.eval(),
             Expression::Binary(Operator::Multiple, expr1, expr2) => expr1.eval() * expr2.eval(),
